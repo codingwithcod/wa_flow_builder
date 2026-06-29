@@ -165,7 +165,73 @@ wa-flow-builder/
 
 ---
 
-## 🚀 Getting Started
+## 🐳 Run with Docker (recommended)
+
+The fastest way to get the whole stack — **MongoDB + API + client** — running locally,
+with hot-reload on both the server and the client. The only prerequisite is
+[Docker](https://docs.docker.com/get-docker/) with Compose v2.
+
+```bash
+git clone https://github.com/theabhipatel/wa-flow-builder.git
+cd wa-flow-builder
+
+# Start everything (first run builds the images and installs dependencies)
+docker compose up --build
+
+# In another terminal, create the default users (one-time)
+docker compose exec server npm run seed
+```
+
+Then open **http://localhost:5173** and log in with the seeded account:
+
+| Role  | Email             | Password |
+|-------|-------------------|----------|
+| Admin | `admin@gmail.com` | `123456` |
+| User  | `abhi@gmail.com`  | `123456` |
+
+| Service      | URL                       |
+|--------------|---------------------------|
+| Client (UI)  | http://localhost:5173     |
+| API          | http://localhost:5000     |
+| MongoDB      | `mongodb://localhost:27017` |
+
+Source files are bind-mounted, so editing anything under `server/` or `client/`
+hot-reloads automatically — no rebuild needed.
+
+### Configuration
+
+All settings are optional and have sensible defaults. To override a port or a
+secret, copy the example env file and edit it:
+
+```bash
+cp .env.example .env
+```
+
+| Variable        | Default                            | Notes |
+|-----------------|------------------------------------|-------|
+| `SERVER_PORT`   | `5000`                             | **macOS:** the AirPlay Receiver also uses 5000 — set this to `5001` if the API port is busy. |
+| `CLIENT_PORT`   | `5173`                             | Vite dev server (the URL you open in the browser). |
+| `MONGO_PORT`    | `27017`                            | Host port for MongoDB. |
+| `JWT_SECRET`    | `dev-jwt-secret-change-in-production` | Change for anything public-facing. |
+| `ENCRYPTION_KEY`| 32-char dev key                    | AES passphrase for stored API keys. |
+
+### Common commands
+
+```bash
+docker compose up -d --build      # start in the background
+docker compose logs -f server     # tail the API logs
+docker compose exec server npm run seed   # (re)create the default users
+docker compose down               # stop (database is kept in a named volume)
+docker compose down -v            # stop and wipe the database
+```
+
+> The API connects to MongoDB over the internal Docker network. The browser runs
+> on the host, so the client is configured to reach the API via the published
+> `SERVER_PORT` — keep `SERVER_PORT` and the URL you open in sync.
+
+---
+
+## 🚀 Getting Started (manual / without Docker)
 
 ### Prerequisites
 
