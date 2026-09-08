@@ -72,17 +72,17 @@ export default function DashboardPage() {
             <div className="mt-8 card p-6">
                 <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <a href="/bots" className="p-4 rounded-xl bg-brand-50 dark:bg-brand-900/20 hover:bg-brand-100 dark:hover:bg-brand-900/30 transition-colors group">
+                    <a href="/dashboard/bots" className="p-4 rounded-xl bg-brand-50 dark:bg-brand-900/20 hover:bg-brand-100 dark:hover:bg-brand-900/30 transition-colors group">
                         <Bot className="w-6 h-6 text-brand-600 dark:text-brand-400 mb-2 group-hover:scale-110 transition-transform" />
                         <p className="font-medium text-sm">Create New Bot</p>
                         <p className="text-xs text-surface-500 mt-1">Set up a new WhatsApp bot</p>
                     </a>
-                    <a href="/bots" className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 transition-colors group">
+                    <a href="/dashboard/bots" className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 hover:bg-emerald-100 dark:hover:bg-emerald-900/30 transition-colors group">
                         <GitBranch className="w-6 h-6 text-emerald-600 dark:text-emerald-400 mb-2 group-hover:scale-110 transition-transform" />
                         <p className="font-medium text-sm">Build a Flow</p>
                         <p className="text-xs text-surface-500 mt-1">Design conversational flows</p>
                     </a>
-                    <a href="/settings" className="p-4 rounded-xl bg-violet-50 dark:bg-violet-900/20 hover:bg-violet-100 dark:hover:bg-violet-900/30 transition-colors group">
+                    <a href="/dashboard/bots" className="p-4 rounded-xl bg-violet-50 dark:bg-violet-900/20 hover:bg-violet-100 dark:hover:bg-violet-900/30 transition-colors group">
                         <Activity className="w-6 h-6 text-violet-600 dark:text-violet-400 mb-2 group-hover:scale-110 transition-transform" />
                         <p className="font-medium text-sm">Configure API</p>
                         <p className="text-xs text-surface-500 mt-1">Add OpenAI credentials</p>

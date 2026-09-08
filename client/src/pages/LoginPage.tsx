@@ -41,7 +41,7 @@ export default function LoginPage() {
 
       if (res.data.success) {
         dispatch(loginSuccess(res.data.data));
-        navigate("/");
+        navigate("/dashboard");
       }
     } catch (err: unknown) {
       const axiosErr = err as { response?: { data?: { error?: string } } };
