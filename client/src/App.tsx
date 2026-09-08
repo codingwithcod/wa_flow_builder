@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import BotListPage from './pages/BotListPage';
@@ -21,9 +22,10 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 function App() {
     return (
         <Routes>
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route
-                path="/"
+                path="/dashboard"
                 element={
                     <PrivateRoute>
                         <Layout />
@@ -53,3 +55,4 @@ function App() {
 }
 
 export default App;
+

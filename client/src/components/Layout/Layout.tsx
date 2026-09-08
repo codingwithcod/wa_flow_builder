@@ -39,11 +39,11 @@ export default function Layout() {
     };
 
     const navItems = [
-        { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
-        { to: '/bots', icon: Bot, label: 'Bots' },
-        { to: '/conversations', icon: MessageSquare, label: 'Conversations' },
-        { to: '/ai-management', icon: Brain, label: 'AI Management' },
-        ...(user?.role === 'ADMIN' ? [{ to: '/admin', icon: Shield, label: 'Admin' }] : []),
+        { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+        { to: '/dashboard/bots', icon: Bot, label: 'Bots' },
+        { to: '/dashboard/conversations', icon: MessageSquare, label: 'Conversations' },
+        { to: '/dashboard/ai-management', icon: Brain, label: 'AI Management' },
+        ...(user?.role === 'ADMIN' ? [{ to: '/dashboard/admin', icon: Shield, label: 'Admin' }] : []),
     ];
 
     return (
@@ -72,7 +72,7 @@ export default function Layout() {
                         <NavLink
                             key={item.to}
                             to={item.to}
-                            end={item.to === '/'}
+                            end={item.to === '/dashboard'}
                             className={({ isActive }) =>
                                 `sidebar-link ${isActive ? 'active' : ''}`
                             }
@@ -86,7 +86,7 @@ export default function Layout() {
                 {/* User section — clickable to profile */}
                 <div className="p-3 border-t border-surface-200 dark:border-surface-700">
                     <button
-                        onClick={() => navigate('/profile')}
+                        onClick={() => navigate('/dashboard/profile')}
                         className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-700/50 transition-colors group"
                     >
                         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-400 to-purple-500 flex items-center justify-center flex-shrink-0">

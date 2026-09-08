@@ -145,10 +145,10 @@ export default function BotListPage() {
                             </div>
 
                             <div className="flex gap-2 mt-auto">
-                                <button onClick={() => navigate(`/bots/${bot._id}/flows`)} className="flex-1 btn-primary text-sm py-2">
+                                <button onClick={() => navigate(`/dashboard/bots/${bot._id}/flows`)} className="flex-1 btn-primary text-sm py-2">
                                     <GitBranch className="w-3.5 h-3.5 inline mr-1" /> Flows
                                 </button>
-                                <button onClick={() => navigate(`/bots/${bot._id}/settings`)} className="btn-secondary text-sm py-2 px-3">
+                                <button onClick={() => navigate(`/dashboard/bots/${bot._id}/settings`)} className="btn-secondary text-sm py-2 px-3">
                                     <Settings className="w-3.5 h-3.5" />
                                 </button>
                             </div>

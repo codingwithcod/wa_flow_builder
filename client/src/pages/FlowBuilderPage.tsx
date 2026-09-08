@@ -489,7 +489,7 @@ function FlowBuilderInner() {
             {/* Toolbar */}
             <div className="h-14 bg-white dark:bg-surface-900 border-b border-surface-200 dark:border-surface-700 flex items-center justify-between px-4">
                 <div className="flex items-center gap-4">
-                    <button onClick={() => navigate(`/bots/${botId}/flows`)} className="p-2 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-800">
+                    <button onClick={() => navigate(`/dashboard/bots/${botId}/flows`)} className="p-2 rounded-lg hover:bg-surface-100 dark:hover:bg-surface-800">
                         <ArrowLeft className="w-5 h-5" />
                     </button>
                     <div>
